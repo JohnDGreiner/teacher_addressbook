@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/login'
+
+  get 'sessions/logout'
+
   root 'parents#index'
 
   resources :parents
