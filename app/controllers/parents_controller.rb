@@ -1,12 +1,14 @@
 class ParentsController < ApplicationController
 
   before_action :logged_in?
+  before_action :show_name
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
   # GET /parents
   # GET /parents.json
   def index
-    @parents = Parent.all
+    @parents = Parent.where(teacher_id: session[:user_id])
+
   end
 
   # GET /parents/1
@@ -79,6 +81,10 @@ class ParentsController < ApplicationController
       else
         redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
       end
+    end
+
+    def show_name
+      @teacher_last_name = Teacher.find(session[:user_id]).last_name
     end
 
 end
