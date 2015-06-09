@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Teacher.create!(first_name: "Sue", last_name: "Rogers", email: "srogers@example.com", password_digest: "qwe00iop" )
-Teacher.create!(first_name: "Joe", last_name: "Johnson", email: "jjohnson@example.com", password_digest: "qwe00iop" )
-Teacher.create!(first_name: "Edna", last_name: "Krabappel", email: "ekrabappel@example.com", password_digest: "qwe00iop" )
+Teacher.create!(first_name: "Sue", last_name: "Rogers", email: "srogers@example.com", password: "qwe00iop" )
+Teacher.create!(first_name: "Joe", last_name: "Johnson", email: "jjohnson@example.com", password: "qwe00iop" )
+Teacher.create!(first_name: "Edna", last_name: "Krabappel", email: "ekrabappel@example.com", password: "qwe00iop" )
 
 
 50.times{
