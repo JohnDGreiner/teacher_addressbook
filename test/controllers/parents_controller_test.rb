@@ -3,6 +3,7 @@ require 'test_helper'
 class ParentsControllerTest < ActionController::TestCase
   setup do
     @parent = parents(:one)
+    login!
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class ParentsControllerTest < ActionController::TestCase
 
   test "should create parent" do
     assert_difference('Parent.count') do
-      post :create, parent: { email: @parent.email, first_name: @parent.first_name, last_name: @parent.last_name, notes: @parent.notes, teacher_id: @parent.teacher_id }
+      post :create, parent: { email: "parent@example.com", first_name: "Sam", last_name: "Parent", notes: "This is a note.", teacher_id: 1 }
     end
 
     assert_redirected_to parent_path(assigns(:parent))

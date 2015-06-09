@@ -3,8 +3,8 @@
 one:
   first_name: MyString
   last_name: MyString
-  email: MyString
-  password_digest: MyString
+  email: teacher@example.com
+  password_digest: "pa55word"
 
 two:
   first_name: MyString

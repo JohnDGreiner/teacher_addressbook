@@ -1,4 +1,6 @@
 class ParentsController < ApplicationController
+
+  before_action :logged_in?
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
   # GET /parents
@@ -71,4 +73,12 @@ class ParentsController < ApplicationController
     def parent_params
       params.require(:parent).permit(:first_name, :last_name, :email, :notes, :teacher_id)
     end
+
+    def logged_in?
+      if Parent.find_by_id(session[:user_id])
+      else
+        redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
+      end
+    end
+
 end
