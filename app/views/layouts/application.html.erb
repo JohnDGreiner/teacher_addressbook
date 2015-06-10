@@ -7,18 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p id="notice"><%= notice %></p>
-  <div>
-    <% if session[:user_id] %>
-      <% teacher = Teacher.find(session[:user_id]) %>
-      Hello Teacher <%= teacher.last_name %>
-      <%= link_to "Logout", sessions_logout_path  %>
-      <%= link_to "Update Email", teachers_update_email_path  %>
-      <%= link_to "Change Password", teachers_update_password_path %>
-    <% end %>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <div>
+      <% if session[:user_id] %>
+        <% teacher = Teacher.find(session[:user_id]) %>
+        Hello Teacher <%= teacher.last_name %>
+        <%= link_to "Logout", sessions_logout_path  %>
+        <%= link_to "Update Email", teachers_update_email_path  %>
+        <%= link_to "Change Password", teachers_update_password_path %>
+      <% end %>
+    </div>    
+    <%= yield %>
   </div>
-
-  <%= yield %>
 
 </body>
 </html>

@@ -27,7 +27,7 @@ class ParentsControllerTest < ActionController::TestCase
 
   test "should show parent" do
     get :show, id: @parent
-    assert_response :success
+    assert_redirected_to parents_path
   end
 
   test "should get edit" do
