@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def login
 
     if request.post?
