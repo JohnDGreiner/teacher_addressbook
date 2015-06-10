@@ -1,10 +1,32 @@
-<h1>Teacher Book</h1>
-<p>Login to view and update your list of parents.</p>
+<div class='row'>
+  <div class='col-md-4'></div>
+  <div class='col-md-4'>
+  <h1>Login</h1>
+  <p>Login to view and update your list of parents.</p>
 
-<%= form_tag do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "login" %>
-<% end %>
+  <%= form_tag do %>
+    <div class='row'>
+      <div class='col-md-2'>
+        <%= label_tag :email %>
+      </div>
+      <div class=col-md-10>
+        <%= text_field_tag :email %><br>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-2'>
+        <%= label_tag :password %>
+      </div>
+      <div class=col-md-10>
+        <%= password_field_tag :password %><br>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-8'><br>
+        <div class='span7 text-center'>
+          <button type="button" class="btn btn-success"><%= submit_tag %>Login</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
