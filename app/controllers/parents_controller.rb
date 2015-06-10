@@ -18,7 +18,7 @@ class ParentsController < ApplicationController
 
   # GET /parents/new
   def new
-    @parent = Parent.new
+    @parent = Parent.new(teacher_id: session[:user_id])
   end
 
   # GET /parents/1/edit
@@ -28,7 +28,7 @@ class ParentsController < ApplicationController
   # POST /parents
   # POST /parents.json
   def create
-    @parent = Parent.new(parent_params)
+    @parent = Parent.new(parent_params, :teacher_id)
 
     respond_to do |format|
       if @parent.save
