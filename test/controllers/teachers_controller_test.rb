@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class TeachersControllerTest < ActionController::TestCase
+  setup do
+    login!
+  end
+
   test "should get update_password" do
     get :update_password
     assert_response :success
