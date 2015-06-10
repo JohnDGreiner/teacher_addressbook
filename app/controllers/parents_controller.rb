@@ -77,7 +77,7 @@ class ParentsController < ApplicationController
     end
 
     def logged_in?
-      if Parent.find_by_id(session[:user_id])
+      if Teacher.find_by_id(session[:user_id])
       else
         redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
       end

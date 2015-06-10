@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  # before_action :logged_in?
 
   def login
 
@@ -17,4 +18,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to sessions_login_path, notice: "Successfully logged out."
   end
+
 end

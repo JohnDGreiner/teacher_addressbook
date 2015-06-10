@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_action :logged_in?
 
   def update_password
 
@@ -26,5 +27,15 @@ class TeachersController < ApplicationController
     end
 
   end
+
+  private
+
+    def logged_in?
+      if Teacher.find_by_id(session[:user_id])
+      else
+        redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
+      end
+    end
+
 
 end
