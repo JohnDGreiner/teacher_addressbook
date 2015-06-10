@@ -12,6 +12,8 @@
     <% if session[:user_id] != nil %>
       <%= @teacher_last_name %>
       <%= link_to "Logout", sessions_logout_path if session[:user_id] %>
+      <%= link_to "Update Email", teachers_update_email_path if session[:user_id] %>
+  
     <% end %>
   </div>
 

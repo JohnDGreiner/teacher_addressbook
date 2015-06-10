@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'teachers/update_password'
+
+  get 'teachers/update_email'
+  post 'teachers/update_email'
+
   get 'sessions/login'
   post 'sessions/login'
   get 'sessions/logout'
